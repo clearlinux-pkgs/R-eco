@@ -4,7 +4,7 @@
 #
 Name     : R-eco
 Version  : 4.0.1
-Release  : 1
+Release  : 2
 URL      : https://cran.r-project.org/src/contrib/eco_4.0-1.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/eco_4.0-1.tar.gz
 Summary  : Ecological Inference in 2x2 Tables
