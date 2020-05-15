@@ -4,7 +4,7 @@
 #
 Name     : R-eco
 Version  : 4.0.1
-Release  : 16
+Release  : 17
 URL      : https://cran.r-project.org/src/contrib/eco_4.0-1.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/eco_4.0-1.tar.gz
 Summary  : Ecological Inference in 2x2 Tables
@@ -12,7 +12,6 @@ Group    : Development/Tools
 License  : GPL-2.0+
 Requires: R-eco-lib = %{version}-%{release}
 BuildRequires : buildreq-R
-BuildRequires : util-linux
 
 %description
 No detailed description available
@@ -27,21 +26,22 @@ lib components for the R-eco package.
 
 %prep
 %setup -q -c -n eco
+cd %{_builddir}/eco
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1571822256
+export SOURCE_DATE_EPOCH=1589531201
 
 %install
-export SOURCE_DATE_EPOCH=1571822256
+export SOURCE_DATE_EPOCH=1589531201
 rm -rf %{buildroot}
 export LANG=C.UTF-8
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
-export FCFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
-export FFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
+export FCFLAGS="$FFLAGS -O3 -flto -fno-semantic-interposition "
+export FFLAGS="$FFLAGS -O3 -flto -fno-semantic-interposition "
 export CXXFLAGS="$CXXFLAGS -O3 -flto -fno-semantic-interposition "
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
